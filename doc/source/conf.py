@@ -22,14 +22,16 @@ sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../../pyorbital'))
 from pyorbital import __version__  # noqa
 
-# -- General configuration -----------------------------------------------------
+# -- General configuration -----------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
 #needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.coverage']
+#extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.coverage', "sphinxtogithub"]
+extensions = [
+    'sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.coverage']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['.templates']
@@ -45,7 +47,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'pyorbital'
-copyright = u'2012-2015, 2018, The Pytroll crew'
+copyright = u'2012-2020, The Pytroll crew'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -91,7 +93,7 @@ pygments_style = 'sphinx'
 #modindex_common_prefix = []
 
 
-# -- Options for HTML output ---------------------------------------------------
+# -- Options for HTML output ---------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -124,7 +126,7 @@ html_theme = 'default'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['.static']
+html_static_path = ['../_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -171,7 +173,7 @@ html_static_path = ['.static']
 htmlhelp_basename = 'pyorbitaldoc'
 
 
-# -- Options for LaTeX output --------------------------------------------------
+# -- Options for LaTeX output --------------------------------------------
 
 # The paper size ('letter' or 'a4').
 #latex_paper_size = 'letter'
@@ -210,7 +212,7 @@ latex_documents = [
 #latex_domain_indices = True
 
 
-# -- Options for manual page output --------------------------------------------
+# -- Options for manual page output --------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).

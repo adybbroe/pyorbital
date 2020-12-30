@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2011, 2014 SMHI
-
+# Copyright (c) 2011, 2012, 2014, 2016, 2018, 2020 SMHI
 # Author(s):
 
 #   Martin Raspaud <martin.raspaud@smhi.se>
+#   Adam Dybbroe <adam.dybbroe@smhi.se>
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ from pyorbital.tlefile import ChecksumError
 
 
 class LineOrbital(Orbital):
+
     """Read TLE lines instead of file.
     """
 
@@ -81,7 +82,9 @@ def get_results(satnumber, delay):
 
 _DATAPATH = os.path.dirname(os.path.abspath(__file__))
 
+
 class AIAAIntegrationTest(unittest.TestCase):
+
     """Test against the AIAA test cases.
     """
 
@@ -136,6 +139,7 @@ class AIAAIntegrationTest(unittest.TestCase):
                         delta_pos = 5e-6  # km =  5 mm
                         delta_vel = 5e-9  # km/s = 5 um/s
                         delta_time = 1e-3  # 1 millisecond
+
                         self.assertTrue(abs(res[0] - pos[0]) < delta_pos)
                         self.assertTrue(abs(res[1] - pos[1]) < delta_pos)
                         self.assertTrue(abs(res[2] - pos[2]) < delta_pos)
@@ -150,8 +154,7 @@ class AIAAIntegrationTest(unittest.TestCase):
 
 
 def suite():
-    """The suite for test_aiaa
-    """
+    """The suite for aiaa integration"""
     loader = unittest.TestLoader()
     mysuite = unittest.TestSuite()
     mysuite.addTest(loader.loadTestsFromTestCase(AIAAIntegrationTest))

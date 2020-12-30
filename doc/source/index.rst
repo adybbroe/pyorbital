@@ -21,11 +21,6 @@ TLE files
 ---------
 Pyorbital has a module for parsing NORAD TLE-files
 
-    >>> from pyorbital import tlefile
-    >>> tle = tlefile.read('noaa 18', '/path/to/my/tle_file.txt')
-    >>> tle.inclination
-    99.043499999999995
-
 If no path is given pyorbital tries to read the earth observation TLE-files from celestrak.com
 
 TLE download and database
@@ -86,49 +81,21 @@ If we take a TLE from one week earlier we get a slightly different result:
     (104.1539184988462, 79.328272480878141, 838.81555967963391)
 
 
+>>>>>>> master
 
-Computing astronomical parameters
----------------------------------
-The astronomy module enables computation of certain parameters of interest for satellite remote sensing for instance the Sun-zenith angle:
+.. toctree::
+   :maxdepth: 2
 
-    >>> from pyorbital import astronomy
-    >>> from datetime import datetime
-    >>> utc_time = datetime(2012, 5, 15, 15, 45)
-    >>> lon, lat = 12, 56
-    >>> astronomy.sun_zenith_angle(utc_time, lon, lat)
-    62.685986438071602
+   tle
+   satellite_position
+   astronomy
+   moon_calculations
+   api
+              
 
-API
----
-
-Orbital computations
-~~~~~~~~~~~~~~~~~~~~
-
-.. automodule:: pyorbital.orbital
-   :members:
-   :undoc-members:
-
-TLE handling
-~~~~~~~~~~~~
-
-.. automodule:: pyorbital.tlefile
-   :members:
-   :undoc-members:
-
-Astronomical computations
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. automodule:: pyorbital.astronomy
-   :members:
-   :undoc-members:
-
-
-.. Contents:
-   .. toctree::
-      :maxdepth: 2
-   Indices and tables
-   ==================
-   * :ref:`genindex`
-   * :ref:`modindex`
-   * :ref:`search`
+Indices and tables
+==================
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 

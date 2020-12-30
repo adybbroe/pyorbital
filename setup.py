@@ -7,7 +7,8 @@
 #
 #   Martin Raspaud <martin.raspaud@smhi.se>
 #   Panu Lahtinen <panu.lahtinen@fmi.fi>
-#
+#   Adam Dybbroe <adam.dybbroe@smhi.se>
+
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -43,6 +44,7 @@ setup(name='pyorbital',
                    "Topic :: Scientific/Engineering :: Astronomy"],
       url="https://github.com/pytroll/pyorbital",
       test_suite='pyorbital.tests.suite',
+
       packages=find_packages(),
       package_data={'pyorbital': [os.path.join('etc', 'platforms.txt')]},
       scripts=['bin/fetch_tles.py', ],

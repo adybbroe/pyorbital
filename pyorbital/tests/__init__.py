@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2014 Martin Raspaud
+# Copyright (c) 2014-2016, 2020 Martin Raspaud
 
 # Author(s):
 
 #   Martin Raspaud <martin.raspaud@smhi.se>
+#   Adam Dybbroe <adam.dybbroe@smhi.se>
+
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,21 +24,33 @@
 """The tests package."""
 
 from pyorbital.tests import (test_aiaa, test_tlefile, test_orbital,
-                             test_astronomy, test_geoloc)
+                             test_astronomy, test_geoloc, test_moon)
+from pyorbital import planets
+
 import unittest
+import doctest
+
+import os
+TRAVIS = os.environ.get("TRAVIS", False)
 
 
 def suite():
     """The global test suite."""
     mysuite = unittest.TestSuite()
-    # Test the documentation strings
-    # mysuite.addTests(doctest.DocTestSuite(image))
+    if not TRAVIS:
+        # Test sphinx documentation pages:
+        # mysuite.addTests(doctest.DocFileSuite('../doc/source/index.rst'))
+        # Test the documentation strings
+        mysuite.addTests(doctest.DocTestSuite(planets))
+
     # Use the unittests also
     mysuite.addTests(test_aiaa.suite())
     mysuite.addTests(test_tlefile.suite())
-    mysuite.addTests(test_orbital.suite())
     mysuite.addTests(test_astronomy.suite())
+    mysuite.addTests(test_orbital.suite())
     mysuite.addTests(test_geoloc.suite())
+    mysuite.addTests(test_moon.suite())
+
     return mysuite
 
 
