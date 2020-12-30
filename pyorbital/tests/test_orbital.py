@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2012-2014, 2016, 2018 Martin Raspaud
+# Copyright (c) 2012-2014, 2016, 2018, 2020 Martin Raspaud
 
 # Author(s):
 
@@ -299,6 +299,7 @@ class TestRegressions(unittest.TestCase):
                       line2="2 37849  98.7092 229.3263 0000715  98.5313 290.6262 14.19554485413345")
         orb.get_next_passes(parser.parse("2019-10-21 16:00:00"), 12, 123.29736, -13.93763, 0)
         warnings.filterwarnings('default')
+
 
 def suite():
     """The suite for test_orbital

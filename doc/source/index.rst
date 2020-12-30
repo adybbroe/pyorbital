@@ -81,7 +81,6 @@ If we take a TLE from one week earlier we get a slightly different result:
     (104.1539184988462, 79.328272480878141, 838.81555967963391)
 
 
->>>>>>> master
 
 .. toctree::
    :maxdepth: 2
