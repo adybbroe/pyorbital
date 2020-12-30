@@ -44,16 +44,9 @@ setup(name='pyorbital',
                    "Topic :: Scientific/Engineering :: Astronomy"],
       url="https://github.com/pytroll/pyorbital",
       test_suite='pyorbital.tests.suite',
-      << << << < HEAD
-
       packages=find_packages(),
       package_data={'pyorbital': [os.path.join('etc', 'platforms.txt')]},
       scripts=['bin/fetch_tles.py', ],
       install_requires=['numpy>=1.11.0,!=1.14.0', 'scipy', 'requests'],
-      == == == =
-      package_dir={'pyorbital': 'pyorbital'},
-      packages=['pyorbital'],
-      install_requires=['numpy>=1.6.0,!=1.14.0'],
-      >>>>>> > 6c0c3089ec161227568dad7727337ed7333f6dc1
       zip_safe=False,
       )
